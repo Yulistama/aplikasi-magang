@@ -19,4 +19,6 @@ use App\Http\Controllers\admin\AdminController;
 // });
 
 Route::get('/', [LandingController::class, 'landing'])->name('landing');
+Route::get('/info-magang', [LandingController::class, 'infomagang'])->name('infomagang');
+
 Route::get('/dashboard-admin', [AdminController::class, 'dashboard'])->name('dashboard');

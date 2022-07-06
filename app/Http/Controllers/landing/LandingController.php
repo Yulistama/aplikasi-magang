@@ -12,4 +12,9 @@ class LandingController extends Controller
         return view('pages.landing.landing');
     }
     
+    public function infomagang()
+    {
+        return view('component.cardInfoMagang');
+    }
+    
 }

@@ -1,6 +1,5 @@
 @extends('layout.landing')
-@section('content')
-
+@section('jumbotron')
   <!-- ======= Section ======= -->
   <section id="hero" class="d-flex align-items-center">
 
@@ -21,9 +20,9 @@
     </div>
 
   </section><!-- End Hero -->
+@endsection
 
-  <main id="main">
-
+@section('content')
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients section-bg">
       <div class="container">
@@ -220,9 +219,5 @@
 
       </div>
     </section>
-    <!-- End Frequently Asked Questions Section -->
-
-  </main>
-  <!-- End #main -->
-
-  @endsection
+  <!-- End Frequently Asked Questions Section -->
+@endsection

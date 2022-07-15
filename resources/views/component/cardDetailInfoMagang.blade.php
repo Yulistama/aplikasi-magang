@@ -102,7 +102,7 @@
 @endsection
 
     <div class="row">
-        <div class="col-md-6 col-12 text-md-start text-center">
+        <div class="col-md-3 col-12 text-md-start text-center">
             <span>Cari Magang</span>
             <div class="dropdown d-inline">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -115,10 +115,20 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-12 text-md-end text-center"> 
-            <button type="button" class="btn btn-outline-primary mx-4">Lihat semua</button>
-            <div class="pagination-custome"></div>
+        <div class="col-md-3 col-12 text-md-start text-center">
+            <span>Jenis Perusahaan</span>
+            <div class="dropdown d-inline">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                IT
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Marketing</a>
+                    <a class="dropdown-item" href="#">Data Analys</a>
+                    <a class="dropdown-item" href="#">Programer</a>
+                </div>
+            </div>
         </div>
+        
     </div>
 
     <div class="row mt-3">
@@ -195,7 +205,36 @@
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                 </div>
             </div>
+            <div class="card-custome">
+                <div class="card-image-custome">
+                    <img src="<?php echo e(asset("landing/assets/img/company/company-2.jpg")); ?>" style="height: 200px; width: 100%" alt="">
+                </div>
+                <div class="card-info-custome">
+                    <h3>Perusahaan 06</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </div>
+            </div>
+            <div class="card-custome">
+                <div class="card-image-custome">
+                    <img src="<?php echo e(asset("landing/assets/img/company/company-1.jpg")); ?>" style="height: 200px; width: 100%" alt="">
+                </div>
+                <div class="card-info-custome">
+                    <h3>Perusahaan 07</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </div>
+            </div>
+            <div class="card-custome">
+                <div class="card-image-custome">
+                    <img src="<?php echo e(asset("landing/assets/img/company/company-2.jpg")); ?>" style="height: 200px; width: 100%" alt="">
+                </div>
+                <div class="card-info-custome">
+                    <h3>Perusahaan 08</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </div>
+            </div>
         </div>
+        <div class="pagination-custome mt-3"></div>
+        
     </div>
 
 @section('script')
@@ -227,7 +266,7 @@
 
         $(document).ready(function(){
             var numberOfItems = $(".card-content-custome .card-custome").length;
-            var limitPerPage = 4;
+            var limitPerPage = 8;
             var totalPages = Math.ceil(numberOfItems / limitPerPage);
             var paginationSize = 7;
             var currentPage;
@@ -242,9 +281,9 @@
                 $(".pagination-custome li").slice(1, -1).remove();
 
                 getPageList(totalPages, currentPage, paginationSize).forEach(item => {
-                    // $("<li>").addClass("page-item-custome").addClass(item ? "current-page-custome" : "dots")
-                    // .toggleClass("actived", item === currentPage).append($("<a>").addClass("page-link-custome")
-                    // .attr({href : "javascript:void(0)"}).text(item || "...")).insertBefore(".next-page-custome");
+                    $("<li>").addClass("page-item-custome").addClass(item ? "current-page-custome" : "dots")
+                    .toggleClass("actived", item === currentPage).append($("<a>").addClass("page-link-custome")
+                    .attr({href : "javascript:void(0)"}).text(item || "...")).insertBefore(".next-page-custome");
                 });
 
                 $(".previous-page-custome").toggleClass("disabled", currentPage === 1);

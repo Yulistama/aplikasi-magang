@@ -42,20 +42,20 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
+  <header id="header" class="<?php echo e(url()->current() == route('landing') ? "fixed-top" : "fixed-top header-inner-pages"); ?>">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Magang</a></h1>
+      <h1 class="logo me-auto"><a href="<?php echo e(route('landing')); ?>">Magang</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="<?php echo e(asset("landing/assets/img/logo.png")); ?>" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#">Home</a></li>
+          <li><a class="nav-link scrollto active" href="<?php echo e(route('landing')); ?>">Home</a></li>
           <li><a class="nav-link scrollto" href="#">Info Magang</a></li>
           <li><a class="nav-link scrollto" href="#">Contact</a></li>
           <li><a class="nav-link scrollto" href="#">About</a></li>
-          <li><a class="getstarted scrollto" href="#">Masuk</a></li>
+          <li><a class="getstarted scrollto" data-bs-toggle="modal" data-bs-target="#login">Masuk</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -65,7 +65,13 @@
   <!-- End Header -->
 
   <!-- ======= Content ======= -->
-  @yield('content')
+
+  @yield('jumbotron')
+  
+  <main id="main">
+    @include('component.cardLogin')
+    @yield('content')
+  </main>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
